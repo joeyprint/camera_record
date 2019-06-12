@@ -1,6 +1,7 @@
 ## Camera Record with React
 
 ###INSTALLATION GUIDE
+
 After you already to pull this repository, you need to install vender by using this command
 
 `npm install` or `yarn install`
