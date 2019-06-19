@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'react-bootstrap'
 
 import '../../node_modules/video.js/dist/video-js.css'
 import videojs from 'video.js'
@@ -10,7 +11,8 @@ import '../../node_modules/videojs-record/dist/css/videojs.record.css'
 import Record from '../../node_modules/videojs-record/dist/videojs.record'
 
 class Camera extends React.Component {
-  componentDidMount() {
+
+  async componentDidMount() {
     // instantiate Video.js
     this.player = videojs(this.videoNode, this.props, () => {
       // print version information at startup
@@ -23,6 +25,7 @@ class Camera extends React.Component {
     // device is ready
     this.player.on('deviceReady', () => {
       console.log('device is ready!');
+      this.player.record().start()
     });
 
     // user clicked the record button and started recording
